@@ -2,6 +2,7 @@ const PubSub = require('../helpers/pub_sub.js')
 
 const InfoView = function(container){
   this.container = container;
+  console.log(this.container);
 };
 
 InfoView.prototype.bindEvents = function () {
@@ -13,10 +14,17 @@ InfoView.prototype.bindEvents = function () {
 
 InfoView.prototype.render = function (instrument) {
   const info = document.createElement('p');
+  eachInstrument = instrument.forEach( () => {
+    new Instrument ----------------------------------
+  });
   info.textContent = `Description: ${instrument.description}, Instruments: ${instrument.instruments}`;
+  console.log(instrument);
   this.container.innerHTML = '';
+  // console.log(info);
   this.container.appendchild(info);
+
 };
+
 
 
 

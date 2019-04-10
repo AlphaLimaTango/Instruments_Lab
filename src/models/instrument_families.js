@@ -1,12 +1,14 @@
 const PubSub = require('../helpers/pub_sub.js')
 const instrumentFamilyData = require('../data/instrument_family_data.js')
 
-const InstrumentFamilies = function(instrumentFamilyData) {
-  this.instrumentFamilyData = instrumentFamilyData;
+const InstrumentFamilies = function() {
+  // this.instrumentFamilyData = instrumentFamilyData;
 };
 
 InstrumentFamilies.prototype.bindEvents = function () {
-  PubSub.publish('all-instruments', this.instrumentFamilyData);
+  console.log("Hello world");
+  console.log(instrumentFamilyData);
+  PubSub.publish('all-instruments', instrumentFamilyData);
 
   PubSub.subscribe('SelectView:change', (event) => {
     const selectedIndex = event.detail;
